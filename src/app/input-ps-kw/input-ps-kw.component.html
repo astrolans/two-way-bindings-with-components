@@ -1,5 +1,5 @@
-<input type="number" [(ngModel)]="value"/>
-<select [(ngModel)]="uom">
+<input type="number" [(ngModel)]="value" (change)="onPowerChanged()"/>
+<select [(ngModel)]="uom" (change)="onUomChanged()">
   <option>PS</option>
   <option>kW</option>
 </select>

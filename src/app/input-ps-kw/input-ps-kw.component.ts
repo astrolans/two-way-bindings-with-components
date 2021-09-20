@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input-ps-kw',
@@ -7,8 +7,22 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class InputPsKwComponent implements OnInit {
   @Input() value = 30;
-  @Input() uom = 'PS';
+  @Output() valueChange = new EventEmitter<number>();
+
+  @Input() uom = 'kW';
+  @Output() uomChange = new EventEmitter<string>();
+
+  private readonly onePsIsKw = 0.73549875;
+
   constructor() { }
+
+  onPowerChanged(): void {
+    this.valueChange.emit(this.value);
+  }
+
+  onUomChanged(): void {
+    this.uomChange.emit(this.uom);
+  }
 
   ngOnInit(): void {
   }
