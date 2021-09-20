@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'two-way-bindings-with-components';
+  astonPower = 286;
+  astonUom = 'PS';
+  ferrariPower = 588;
+  ferrariUom = 'kW';
 }
