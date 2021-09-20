@@ -6,10 +6,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./input-ps-kw.component.css']
 })
 export class InputPsKwComponent implements OnInit {
-  @Input() value = 30;
+  @Input() value = 0;
   @Output() valueChange = new EventEmitter<number>();
 
-  @Input() uom = 'kW';
+  @Input() uom = '0';
   @Output() uomChange = new EventEmitter<string>();
 
   private readonly onePsIsKw = 0.73549875;
@@ -21,6 +21,13 @@ export class InputPsKwComponent implements OnInit {
   }
 
   onUomChanged(): void {
+    if (this.uom == 'kW') {
+      this.value *= this.onePsIsKw;
+    } else {
+      this.value /= this.onePsIsKw;
+    }
+
+    this.valueChange.emit(this.value);
     this.uomChange.emit(this.uom);
   }
 
