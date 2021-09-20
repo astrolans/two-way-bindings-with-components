@@ -9,5 +9,5 @@ export class AppComponent {
   astonPower = 286;
   astonUom = 'PS';
   ferrariPower = 588;
-  ferrariUom = 'kW';
+  ferrariUom = 'PS';
 }

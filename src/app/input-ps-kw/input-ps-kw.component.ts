@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-input-ps-kw',
@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./input-ps-kw.component.css']
 })
 export class InputPsKwComponent implements OnInit {
-  value = 30;
-  uom = 'PS';
+  @Input() value = 30;
+  @Input() uom = 'PS';
   constructor() { }
 
   ngOnInit(): void {

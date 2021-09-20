@@ -1,8 +1,12 @@
 <table>
   <thead>
     <tr>
-      <td><h3>Car Model</h3></td>
-      <td><h3>Power</h3></td>
+      <td>
+        <h3>Car Model</h3>
+      </td>
+      <td>
+        <h3>Power</h3>
+      </td>
     </tr>
   </thead>
   <tbody>
@@ -11,7 +15,8 @@
         Aston Martin DB5
       </td>
       <td>
-        <app-input-ps-kw value="'286'" uom='PS'></app-input-ps-kw>
+        <app-input-ps-kw [value]="astonPower" [uom]="astonUom">
+        </app-input-ps-kw>
       </td>
     </tr>
     <tr>
@@ -19,8 +24,12 @@
         Ferrari LaFerrari
       </td>
       <td>
-        <app-input-ps-kw></app-input-ps-kw>
+        <app-input-ps-kw [value]="ferrariPower" [uom]="ferrariUom">
+        </app-input-ps-kw>
       </td>
     </tr>
   </tbody>
 </table>
+
+<h1>Aston Martin has {{ astonPower }} {{ astonUom }}.<br>
+Ferrari LaFerrari has {{ ferrariPower }} {{ ferrariUom }}.</h1>
